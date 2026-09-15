@@ -1,4 +1,4 @@
-codeunit 80507 "RBZ Item Picture Adapter"
+codeunit 80507 "RBZ Item Picture Adapter" implements "RBZ ISource Adapter"
 {
     procedure Supports(SourceTableNo: Integer): Boolean
     begin
