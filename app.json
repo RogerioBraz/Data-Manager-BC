@@ -1,0 +1,29 @@
+{
+  "id": "161f8dd9-545b-40e9-9de9-4b28ab231c7c",
+  "name": "RBZ External Document Storage",
+  "publisher": "Rogerio Braz",
+  "version": "1.0.0.0",
+  "dependencies": [
+    {
+      "id": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
+      "name": "System Application",
+      "publisher": "Microsoft",
+      "version": "24.0.0.0"
+    }
+  ],
+  "platform": "24.0.0.0",
+  "idRanges": [
+    {
+      "from": 80500,
+      "to": 80599
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "features": [
+    "NoImplicitWith"
+  ]
+}

@@ -1,0 +1,12 @@
+.vscode/
+*.app
+*.g.xlf
+*.rad
+*.raz
+!.xcopies/**
+.target/
+.alpackages/
+snapshot/
+log/
+**/*.lic
+.axproject/
