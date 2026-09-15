@@ -39,13 +39,13 @@ codeunit 80506 "RBZ Integrity Checker"
         CurrentHash: Text;
     begin
         TempBlob.CreateOutStream(OutStr);
-        if not DownloadForVerify(Entry, OutStr) then begin
+        if not Manager.DownloadToStream(Entry."Blob Name", OutStr) then begin
             MarkAsFailed(Entry, BlobMissingErr);
             exit(false);
         end;
 
         TempBlob.CreateInStream(InStr);
-        CurrentHash := Manager.GetSha256(InStr); // expor o GetSha256 como procedure pública no Manager
+        CurrentHash := Manager.GetSha256(InStr);
 
         if CurrentHash = Entry."SHA256 Hash" then begin
             Entry."Last Verified DateTime" := CurrentDateTime();

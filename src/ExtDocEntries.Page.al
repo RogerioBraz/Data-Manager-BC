@@ -67,9 +67,7 @@ page 80501 "RBZ Ext. Doc. Entries"
                 var
                     Manager: Codeunit "RBZ Ext. Doc. Manager";
                 begin
-                    // Implementar no Manager: Download → hash → comparar com "SHA256 Hash"
-                    // Retorno: Message com OK ou Error com divergência + suggest re-upload
-                    Manager.VerifyIntegrity(Rec);
+                    Manager.VerifyIntegrity(Rec); // OK: hash divergente interrompe com Error
                 end;
             }
             action(DeleteDocument)
@@ -106,6 +104,7 @@ page 80501 "RBZ Ext. Doc. Entries"
     trigger OnAfterGetRecord()
     begin
         StatusStyleExpr := GetStatusStyle();
+        CurrPage.FactBox.PAGE.SetSource(Rec."Source Table No.");
     end;
 
     local procedure GetStatusStyle(): Text
